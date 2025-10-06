@@ -1,34 +1,185 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Oleen Co Design System */
+:root {
+  /* Brand Colors */
+  --brand-primary: #4CAF50;    /* Light Green */
+  --brand-accent: #1B5E20;     /* Dark Green */
+  --brand-light: #E8F5E8;      /* Very Light Green */
+  
+  /* Backgrounds */
+  --bg-page: #FAFFEE;          /* Main page background */
+  --bg-card: #FAFAFF;          /* Card backgrounds */ 
+  --bg-subtle: #F7F7F7;        /* Light section backgrounds */
+  
+  /* Text Colors */
+  --text-primary: #1B5E20;     /* Main headings and content */
+  --text-secondary: #2E7D32;   /* Supporting text */
+  --text-light: #666666;       /* Captions, metadata */
+  
+  /* Borders */
+  --border-light: #E8F5E8;     /* Subtle separators */
+  --border-medium: #DDDDDD;    /* Standard borders */
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-giant: 64px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
-.App-link {
-    color: #61dafb;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+main {
+  flex: 1;
+}
+
+/* Typography */
+.display-large { 
+  font-size: clamp(3rem, 6.5vw, 5rem); 
+  font-weight: 700; 
+  line-height: 0.95; 
+  color: var(--text-primary);
+}
+
+.display-medium { 
+  font-size: clamp(2rem, 4vw, 3rem); 
+  font-weight: 600; 
+  line-height: 1.2; 
+  color: var(--text-primary);
+}
+
+.heading-1 { 
+  font-size: clamp(2rem, 4vw, 3rem); 
+  font-weight: 600; 
+  line-height: 1.2; 
+  color: var(--text-primary);
+}
+
+.heading-2 { 
+  font-size: clamp(1.5rem, 3vw, 2rem); 
+  font-weight: 600; 
+  line-height: 1.3; 
+  color: var(--text-primary);
+}
+
+.heading-3 { 
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem); 
+  font-weight: 600; 
+  line-height: 1.4; 
+  color: var(--text-primary);
+}
+
+.body-large { 
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem); 
+  font-weight: 400; 
+  line-height: 1.6; 
+  color: var(--text-secondary);
+}
+
+.body-medium { 
+  font-size: clamp(1rem, 2vw, 1.125rem); 
+  font-weight: 400; 
+  line-height: 1.6; 
+  color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--brand-primary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 32px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  min-height: 48px;
+  line-height: 1.2;
+}
+
+.btn-primary:hover {
+  background: var(--brand-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brand-accent);
+  border: 2px solid var(--brand-accent);
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  min-height: 48px;
+}
+
+.btn-secondary:hover {
+  background: var(--brand-accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.oil-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+}
+
+.oil-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(27, 94, 32, 0.15);
+}
+
+/* Container */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: var(--spacing-md); }
+.mb-6 { margin-bottom: var(--spacing-xl); }
+.mt-4 { margin-top: var(--spacing-md); }
+.mt-6 { margin-top: var(--spacing-xl); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
 }
